@@ -1,0 +1,48 @@
+-----------Exception Details on  8/4/2021 10:06:01 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 8/4/2021 10:06:01 PM
+
+Error Line No : line 94
+
+Error Message: SqlException
+
+Exception Type: System.Data.SqlClient.SqlException
+
+Error Location : Procedure or function 'USP_Insert_Employee' expects parameter '@jobName', which was not supplied.
+
+ Error Page Url: http://localhost:65376/AccessDBDemoRestService.svc/InsertEmployeeData
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+
+-----------Exception Details on  8/4/2021 10:11:16 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 8/4/2021 10:11:16 PM
+
+Error Line No : line 27
+
+Error Message: FormatException
+
+Exception Type: System.FormatException
+
+Error Location : Input string was not in a correct format.
+
+ Error Page Url: http://localhost:65376/AccessDBDemoRestService.svc/getEmpData/ab
+
+User Host IP: 
+
+
+--------------------------------*End*------------------------------------------
+
+
+

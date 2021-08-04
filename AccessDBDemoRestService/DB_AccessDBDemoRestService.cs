@@ -31,6 +31,7 @@ namespace AccessDBDemoRestService
             }
             catch(Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
             
@@ -53,6 +54,7 @@ namespace AccessDBDemoRestService
             }
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
             finally
@@ -104,6 +106,7 @@ namespace AccessDBDemoRestService
             }
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
           
@@ -158,6 +161,7 @@ namespace AccessDBDemoRestService
             }
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
 
@@ -186,6 +190,7 @@ namespace AccessDBDemoRestService
             }
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
 
