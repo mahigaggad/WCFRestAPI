@@ -12,6 +12,7 @@ namespace AccessDBDemoRestService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "AccessDBDemoRestService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select AccessDBDemoRestService.svc or AccessDBDemoRestService.svc.cs at the Solution Explorer and start debugging.
+    
     public class AccessDBDemoRestService : IAccessDBDemoRestService
     {
         //Function to get data of single employee
@@ -108,6 +109,28 @@ namespace AccessDBDemoRestService
                 throw ex;
             }
             
+        }
+        //Function to delete emp data
+        public string DeleteEmpData(string EmpID)
+        {
+            try
+            {
+                string result = null;
+                DB_AccessDBDemoRestService objDb = new DB_AccessDBDemoRestService();
+                result = objDb.DB_DeleteEmpData(Int32.Parse(EmpID));
+                if(result == "-1")
+                {
+                    return "Employee with id " + EmpID + " deleted successfully.";
+                }
+                else
+                {
+                    return "Deletion Unsuccessful.";
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
 

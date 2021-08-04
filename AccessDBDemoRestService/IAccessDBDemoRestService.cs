@@ -30,5 +30,10 @@ namespace AccessDBDemoRestService
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/InsertEmployeeData", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         String InsertEmployeeData(EmployeData objEmp);
+
+        //Function to delete emp data
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/DeleteEmpData/{EmpID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        string DeleteEmpData(string EmpID);
     }
 }
