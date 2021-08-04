@@ -162,5 +162,33 @@ namespace AccessDBDemoRestService
             }
 
         }
+
+        //Function to delete emp data
+        public string DB_DeleteEmpData(int EmpID)
+        {
+            try
+            {
+                
+                string result = null;
+                conn.Open();
+               
+
+
+                //Stored proc used
+                SqlCommand sqlCmd = new SqlCommand("USP_Delete_Employee", conn);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.Add("@ID", SqlDbType.Int).Value = EmpID;
+
+                result = sqlCmd.ExecuteNonQuery().ToString();
+                
+                conn.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
