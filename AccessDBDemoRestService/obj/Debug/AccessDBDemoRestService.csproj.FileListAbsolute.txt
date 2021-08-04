@@ -1,0 +1,7 @@
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\obj\Debug\AccessDBDemoRestService.csproj.CoreCompileInputs.cache
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\bin\AccessDBDemoRestService.dll.config
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\bin\AccessDBDemoRestService.dll
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\bin\AccessDBDemoRestService.pdb
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\obj\Debug\AccessDBDemoRestService.dll
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\obj\Debug\AccessDBDemoRestService.pdb
+C:\Users\mahima.g\source\repos\AccessDBDemoRestService\AccessDBDemoRestService\obj\Debug\AccessDBDemoRestService.csprojAssemblyReference.cache
