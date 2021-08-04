@@ -49,6 +49,33 @@ namespace AccessDBDemoRestService
             }
         }
 
+        //Function to update employee data
+        public String UpdateEmployeeData(EmployeData objEmp)
+        {
+            try
+            {
+                String result;
+                DB_AccessDBDemoRestService objDb = new DB_AccessDBDemoRestService();
+                result = objDb.DB_UpdateEmpData(objEmp);
+                if (result == "Invalid date")
+                {
+                    return "Please send date in dd-MMM-yyyy format.";
+                }
+                else if(result == "0")
+                {
+                    return "Employee for this id is not present";
+                }
+                else
+                {
+                    return result + " rows(s) updated.";
+                }
+                
+
+            }
+            catch (Exception ex){
+                throw ex;
+            }
+        }
 
 
         public static List<T> ConvertDataTable<T>(DataTable dt)
