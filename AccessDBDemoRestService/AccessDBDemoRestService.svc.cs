@@ -14,6 +14,7 @@ namespace AccessDBDemoRestService
     // NOTE: In order to launch WCF Test Client for testing this service, please select AccessDBDemoRestService.svc or AccessDBDemoRestService.svc.cs at the Solution Explorer and start debugging.
     public class AccessDBDemoRestService : IAccessDBDemoRestService
     {
+        //Function to get data of single employee
         public EmployeData[] getEmpData(string empID)
         {
             try
