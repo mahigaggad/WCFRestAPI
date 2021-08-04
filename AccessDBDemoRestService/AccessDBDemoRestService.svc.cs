@@ -15,20 +15,23 @@ namespace AccessDBDemoRestService
     
     public class AccessDBDemoRestService : IAccessDBDemoRestService
     {
+        
         //Function to get data of single employee
         public EmployeData[] getEmpData(string empID)
         {
             try
             {
-                
+                Int32 id;
                 DataTable dt = new DataTable();
                 DB_AccessDBDemoRestService objDb = new DB_AccessDBDemoRestService();
-                dt = objDb.DB_GetEmpData(int.Parse(empID));
+               
+                dt = objDb.DB_GetEmpData(Int32.Parse(empID));
                 return ConvertDataTable<EmployeData>(dt).ToArray();
             }
 
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
         }
@@ -46,6 +49,7 @@ namespace AccessDBDemoRestService
 
             catch (Exception ex)
             {
+                ExceptionLogging.SendErrorToText(ex);
                 throw ex;
             }
         }
@@ -79,7 +83,8 @@ namespace AccessDBDemoRestService
 
             }
             catch (Exception ex){
-                throw ex;
+                ExceptionLogging.SendErrorToText(ex);
+                return ex.Message.ToString();
             }
         }
 
@@ -106,7 +111,8 @@ namespace AccessDBDemoRestService
             }
             catch (Exception ex)
             {
-                throw ex;
+                ExceptionLogging.SendErrorToText(ex);
+                return ex.Message.ToString();
             }
             
         }
@@ -129,7 +135,8 @@ namespace AccessDBDemoRestService
             }
             catch(Exception ex)
             {
-                throw ex;
+                ExceptionLogging.SendErrorToText(ex);
+                return ex.Message.ToString();
             }
         }
 

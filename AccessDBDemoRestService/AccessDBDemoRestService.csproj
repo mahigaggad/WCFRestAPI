@@ -69,6 +69,7 @@
       <DependentUpon>AccessDBDemoRestService.svc</DependentUpon>
     </Compile>
     <Compile Include="DB_AccessDBDemoRestService.cs" />
+    <Compile Include="ExceptionLogging.cs" />
     <Compile Include="IAccessDBDemoRestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
