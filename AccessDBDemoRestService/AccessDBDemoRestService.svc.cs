@@ -57,6 +57,7 @@ namespace AccessDBDemoRestService
                 String result;
                 DB_AccessDBDemoRestService objDb = new DB_AccessDBDemoRestService();
                 result = objDb.DB_UpdateEmpData(objEmp);
+                
                 if (result == "Invalid date")
                 {
                     return "Please send date in dd-MMM-yyyy format.";
@@ -65,9 +66,13 @@ namespace AccessDBDemoRestService
                 {
                     return "Employee for this id is not present";
                 }
+                else if (result == "1")
+                {
+                    return result + " rows updated.";
+                }
                 else
                 {
-                    return result + " rows(s) updated.";
+                    return "Employee with this id not present";
                 }
                 
 
@@ -75,6 +80,34 @@ namespace AccessDBDemoRestService
             catch (Exception ex){
                 throw ex;
             }
+        }
+
+        //Function to insert employee data and give emp id
+        public String InsertEmployeeData(EmployeData objEmp)
+        {
+            try
+            {
+                String result;
+                DB_AccessDBDemoRestService objDb = new DB_AccessDBDemoRestService();
+                result = objDb.DB_InsertEmpData(objEmp);
+
+                if (result == "Invalid date")
+                {
+                    return "Please send date in dd-MMM-yyyy format.";
+                }
+                
+                else
+                {
+                    return "Employee data inserted and id generated is : " + result;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
         }
 
 

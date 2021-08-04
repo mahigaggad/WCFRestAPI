@@ -25,5 +25,10 @@ namespace AccessDBDemoRestService
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/UpdateEmployeeData", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         String UpdateEmployeeData(EmployeData objEmp);
+
+        //Function to insert employee data and give emp id
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/InsertEmployeeData", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        String InsertEmployeeData(EmployeData objEmp);
     }
 }

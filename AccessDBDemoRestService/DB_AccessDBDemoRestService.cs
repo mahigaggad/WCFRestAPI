@@ -108,5 +108,59 @@ namespace AccessDBDemoRestService
             }
           
         }
+
+
+        //Function to insert employee data and give emp id
+        public string DB_InsertEmpData(EmployeData objEmp)
+        {
+            try
+            {
+                DateTime dateValue;
+                string result = null;
+                conn.Open();
+                //Date validation for DOB
+                if (DateTime.TryParseExact(objEmp.Emp_DOB, "dd-MMM-yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue))
+                {
+                    objEmp.Emp_DOB = dateValue.ToString();
+
+                }
+                else
+                {
+                    return "Invalid date";
+                }
+                //Date validation for joining date
+                if (DateTime.TryParseExact(objEmp.Emp_JoiningDate, "dd-MMM-yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue))
+                {
+                    objEmp.Emp_JoiningDate = dateValue.ToString();
+
+                }
+                else
+                {
+                    return "Invalid date";
+                }
+
+
+                //Stored proc used
+                SqlCommand sqlCmd = new SqlCommand("USP_Insert_Employee", conn);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.Parameters.Add("@Name", SqlDbType.NVarChar).Value = objEmp.Emp_Name;
+                sqlCmd.Parameters.Add("@DOB", SqlDbType.NVarChar).Value = objEmp.Emp_DOB;
+                sqlCmd.Parameters.Add("@joiningDate", SqlDbType.DateTime).Value = objEmp.Emp_JoiningDate;
+                sqlCmd.Parameters.Add("@jobName", SqlDbType.NVarChar).Value = objEmp.Emp_JobName;
+                sqlCmd.Parameters.Add("@DeptID", SqlDbType.Int).Value = objEmp.Emp_DeptID;
+                sqlCmd.Parameters.Add("@ManagerID", SqlDbType.Int).Value = objEmp.Emp_ManagerID;
+                sqlCmd.Parameters.Add("@ID", SqlDbType.Int);
+                sqlCmd.Parameters["@ID"].Direction = ParameterDirection.Output;
+                sqlCmd.ExecuteNonQuery();
+                result = sqlCmd.Parameters["@ID"].Value.ToString();
+                conn.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }
