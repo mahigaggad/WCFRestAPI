@@ -19,5 +19,11 @@ namespace AccessDBDemoRestService
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getLatestNEmpData/{N}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         EmployeData[] getLatestNEmpData(string N);
+
+
+        //Function to update employee data given emp id
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/UpdateEmployeeData", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        String UpdateEmployeeData(EmployeData objEmp);
     }
 }

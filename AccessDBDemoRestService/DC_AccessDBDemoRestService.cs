@@ -16,7 +16,7 @@ namespace AccessDBDemoRestService
 		[DataMember]
         public string Emp_DOB { get; set; }
 		[DataMember]
-        public DateTime Emp_JoiningDate { get; set; }
+        public string Emp_JoiningDate { get; set; }
 		[DataMember]
 		public string Emp_JobName { get; set; }
 		[DataMember]
