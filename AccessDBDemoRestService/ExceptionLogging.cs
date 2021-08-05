@@ -20,7 +20,7 @@ namespace AccessDBDemoRestService
 
             try
             {
-                string filepath = context.Current.Server.MapPath("~/ExceptionDetailsFile/");  //Text File Path
+                string filepath = "C:/inetpub/wwwroot/";  //Text File Path
 
                 if (!Directory.Exists(filepath))
                 {
